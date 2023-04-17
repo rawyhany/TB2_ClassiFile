@@ -10,8 +10,8 @@
 
 
       <div class="post-meta">
-        <span class="post-author">Posted by <a href="#">{{ post.author.username }}</a></span>
-        <span class="post-date">{{ post.date_posted.strftime('%Y-%m-%d') }}</span>
+        <span class="post-author">Posted by <a href="{{ url_for('account') }}">{{ post.author.username }}</a></span>
+        <span class="post-date">{{ post.date_posted.strftime('%d-%m-%Y') }}</span>
       </div>
     </div>
   
