@@ -29,7 +29,7 @@ class Post(db.Model):
    # likes = db.relationship('Like', backref='post', lazy=True)
 
     def __repr__(self):
-        return f"User('{self.username}', '{self.date_posted}')"
+        return f"User('{self.title}', '{self.date_posted}')"
     
 
 class Media(db.Model):
