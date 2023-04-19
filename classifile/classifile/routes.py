@@ -1,5 +1,5 @@
 import os
-from flask import render_template, url_for, flash, redirect, request, abort
+from flask import render_template, url_for, flash, redirect, request, abort, session
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_sqlalchemy import Pagination
 from werkzeug.datastructures import FileStorage
@@ -157,3 +157,13 @@ def user_posts(username):
 
 
 
+@app.route('/like/<int:post_id>', methods=['POST'])
+def like(post_id):
+    if 'user_id' not in session:
+        # user is not logged in
+        return redirect('/login')
+    user_id = session['user_id']
+    new_like = Like(post_id=post_id, user_id=user_id)
+    db.session.add(new_like)
+    db.session.commit()
+    return redirect('/')
