@@ -11,10 +11,6 @@ from flask_login import login_user, current_user, logout_user, login_required
 from datetime import datetime
 
 
-
-#uploads = UploadSet('uploads', IMAGES)
-#configure_uploads(app, uploads)
-
 @app.route("/")
 @app.route("/home")
 def home():
@@ -167,3 +163,4 @@ def like(post_id):
     db.session.add(new_like)
     db.session.commit()
     return redirect('/')
+
