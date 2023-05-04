@@ -28,8 +28,18 @@
               <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
                 <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
-                <a class="nav-item nav-link" href="{{ url_for('home') }}">Media Files</a>
-                <a class="nav-item nav-link" href="{{ url_for('home') }}">Text Files</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="{{ url_for('account') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    File Type
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ url_for('account') }}">Document Files</a>
+                    <a class="dropdown-item" href="{{ url_for('account') }}">Images</a>
+                    <a class="dropdown-item" href="{{ url_for('account') }}">Videos</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Other</a>
+                  </div>
+                </li>
               </div>
               <!-- Navbar Right Side-->
               <div class="navbar-nav">
