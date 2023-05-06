@@ -1,1 +1,1 @@
-bash: gunicorn wsgi:classifile
+web: gunicorn wsgi:classifile
