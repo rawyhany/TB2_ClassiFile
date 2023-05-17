@@ -4,7 +4,7 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_sqlalchemy import Pagination
 from werkzeug.datastructures import FileStorage
 from werkzeug.utils import secure_filename
-from classifile import app, db, bcrypt
+from . import app, db, bcrypt
 from classifile.forms import RegistrationForm, LoginForm, UpdateAccountForm, UploadForm
 from classifile.models import User, Post, Media
 from flask_login import login_user, current_user, logout_user, login_required
