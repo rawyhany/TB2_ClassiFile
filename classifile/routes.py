@@ -89,14 +89,6 @@ def upload():
     form = UploadForm()
     if form.validate_on_submit():
         post = Post(title=form.title.data, content=form.content.data, author=current_user)
- #       filename = secure_filename(form.file.data.filename)
-  #      file_data = FileStorage(stream=form.file.data.stream,
-   #                             filename=filename,
-    #                            content_type=form.file.data.content_type,
-     #                           content_length=form.file.data.content_length,
-      #                          headers=form.file.data.headers)
-       # file_path = uploads.save(file_data, name=filename)
-        #media = Media(filename=file_path)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
