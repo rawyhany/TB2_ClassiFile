@@ -2,8 +2,6 @@ import os
 from flask import render_template, url_for, flash, redirect, request, abort, session
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_sqlalchemy import Pagination
-from werkzeug.datastructures import FileStorage
-from werkzeug.utils import secure_filename
 from . import app, db, bcrypt
 from classifile.forms import RegistrationForm, LoginForm, UpdateAccountForm, UploadForm
 from classifile.models import User, Post, Media
