@@ -26,6 +26,12 @@ def about():
 def faq():
     return render_template('faq.html', title='FAQ')
 
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
